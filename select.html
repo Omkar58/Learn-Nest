@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dribbble</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="container select">
+      <h1>What brings you to <span class="brand-text">Learn Nest</span>?</h1>
+      <p id="para">Select the options that best describe you. Don't worry, you can explore other options later.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="Online courses.png" alt="Online Courses" class="img-fluid">
+            <h2>Online Courses</h2>
+            <div class="sub-content">
+              <p>Offers structured courses on various subjects, ranging from academic topics like mathematics, science, and history to vocational skills like programming, graphic design, and language learning.</p>
+            </div>
+            <div class="tick-mark">✓</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="Teacher_Tutor.png" alt="Teacher and Tutor" class="img-fluid">
+            <h2>Teacher and Tutor</h2>
+            <div class="sub-content">
+              <p>Connects learners with qualified teachers, tutors, or mentors who can provide personalized support, guidance, and assistance throughout their learning journey.</p>
+            </div>
+            <div class="tick-mark">✓</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="Tutorials.png" alt="Tutorials and Guides" class="img-fluid">
+            <h2>Tutorials and Guides</h2>
+            <div class="sub-content">
+              <p>Provides step-by-step tutorials, guides, and instructional videos to help learners grasp complex concepts and acquire new skills in a self-paced manner.</p>
+            </div>
+            <div class="tick-mark">✓</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="last.html"><button class="btn btn-pink" >Finish</button></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      const finishBtn = document.querySelector('.finish-btn');
+
+      // Add event listener to each card
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          // Toggle the selected class to highlight the selected card
+          cards.forEach(c => c.classList.remove('selected'));
+          this.classList.add('selected');
+
+          // Enable the finish button
+          finishBtn.removeAttribute('disabled');
+        });
+      });
+
+      // Add event listener to the finish button
+      finishBtn.addEventListener('click', function() {
+        // Perform action when the finish button is clicked
+        console.log('Finish button clicked');
+      });
+    });
+  </script>
+</body>
+</html>
